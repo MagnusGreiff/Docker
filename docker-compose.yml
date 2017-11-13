@@ -1,0 +1,38 @@
+version: '3'
+services:
+    php7.1:
+        build:
+            ./php71
+        image: php7.1/dockerfile
+        ports:
+            - "8071:80"
+        volumes:
+            - ./../:/var/www/html/
+            - /Users/munge/Dropbox/dbwebb-kurser/config/:/etc/apache2/sites-available
+    php7:
+        build:
+            ./php70
+        image: php7.0/dockerfile
+        ports:
+            - "8070:80"
+        volumes:
+            - ./../:/var/www/html/
+            - /Users/munge/Dropbox/dbwebb-kurser/config/:/etc/apache2/sites-available
+    php56:
+        build:
+            ./php56
+        image: php5.6/dockerfile
+        ports:
+            - "8056:80"
+        volumes:
+            - ./../:/var/www/html/
+            - /Users/munge/Dropbox/dbwebb-kurser/config/:/etc/apache2/sites-available
+    ramverk:
+        build:
+            ./ramverk1
+        image: ramverk1/dockerfile
+        ports:
+            - "8888:80"
+        volumes:
+            - ./../:/var/www/html/
+            - /Users/munge/Dropbox/dbwebb-kurser/config/:/etc/apache2/sites-available
